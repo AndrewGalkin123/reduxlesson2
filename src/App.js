@@ -20,8 +20,8 @@ function App() {
         <Title color={"green"}>Console cmd 2023</Title>
       </Flex>
       <Flex direction="column">
-        <Console />
-        <Button color="green" outlined align="flex-end">Отправить</Button>
+        <Console color="green"/>
+        <Button color="green"  align="flex-end">Отправить</Button>
       </Flex>
 
     </AppWrapper>
