@@ -10,14 +10,27 @@ background: black;
 font-size: 24px;
 border: none;j
 resize: none;
-color: ${({ color }) => color || "white"};
+color: ${props => props.color || props.theme.colors.primary};
 &:focus {
     outline: none;
+}
+@media ${props => props.theme.media.phone} {
+    border: 1px solid red;
+}
+@media ${props => props.theme.media.tablet} {
+    border: 1px solid white;
 }
 `
 
 const Console = ({color, ...props}) => {
     const [lines, setLines] = useState(['C/user/'])
+
+    const onKeyPress = e => {
+        if(e.charCode === 13) {
+            setLines([...lines,'C/user/'])
+        }
+    }
+
     return (
         <Flex>
             <Flex direction="column" margin="0 10px">
@@ -25,7 +38,7 @@ const Console = ({color, ...props}) => {
                     <Line color={color}>{line}</Line>
                 )}
             </Flex>
-            <StyledConsole color={color} {...props}/>
+            <StyledConsole onKeyPress={onKeyPress} color={color} {...props}/>
         </Flex>
 
 

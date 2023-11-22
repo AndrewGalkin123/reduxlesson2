@@ -17,10 +17,10 @@ function App() {
   return (
     <AppWrapper className="App">
       <Flex justify="center">
-        <Title color={"green"}>Console cmd 2023</Title>
+        <Title>Console cmd 2023</Title>
       </Flex>
-      <Flex direction="column">
-        <Console color="green"/>
+      <Flex direction="column" margin="10px 0">
+        <Console />
         <Button color="green"  align="flex-end">Отправить</Button>
       </Flex>
 
